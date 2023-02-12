@@ -15,7 +15,7 @@
     on:mousemove={(e) => handleMove(e, image)}
     class="group w-full  flex justify-between  overflow-hidden"
   >
-    <div class="text-3xl  group-hover:text-purple-600 transition-all z-10">
+    <div class="text-3xl  hover:text-purple-600 transition-all z-10">
       Visionet Tecthon, 2023
     </div>
 

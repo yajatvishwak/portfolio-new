@@ -20,6 +20,9 @@
   },
   "type": "module",
   "dependencies": {
-    "aos": "^2.3.4"
+    "aos": "^2.3.4",
+    "daisyui": "^2.50.0",
+    "smooth-scrollbar": "^8.8.1",
+    "typeit": "^8.7.1"
   }
 }

@@ -1,9 +1,12 @@
 <script>
+  import Skills from "./Skills.svelte";
+  import Scrollbar from "smooth-scrollbar";
+  import Projects from "./Projects.svelte";
+  import Whoami from "./components/achievementdeets/Whoami.svelte";
   import { onMount } from "svelte";
-
+  import AOS from "aos";
   import logo from "../assets/logo.svg";
   import star from "../assets/star.svg";
-  import me from "../assets/me.png";
   import menu from "../assets/menu.svg";
   import Achievements from "./components/Achievements.svelte";
 
@@ -22,6 +25,9 @@
 
   // you know what this is.
   onMount(() => {
+    AOS.init();
+
+    Scrollbar.init(document.querySelector("#scroll"), options);
     width =
       window.innerWidth ||
       document.documentElement.clientWidth ||
@@ -47,7 +53,12 @@
   }
 </script>
 
+<svelte:head>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</svelte:head>
+
 <main
+  id="scroll"
   on:mousemove={handleMousemove}
   class="bg-black text-white h-full min-h-screen overflow-hidden"
 >
@@ -61,14 +72,18 @@
     </div>
   </nav>
   <!-- Introduction page -->
-  <section class="flex flex-col justify-center items-center h-screen">
-    <img
+  <section
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    class="flex flex-col justify-center items-center h-screen"
+  >
+    <!-- <img
       src={me}
       bind:this={profileimage}
-      class="w-1/6  -mt-20 mb-5 meshadow "
+      class="w-1/6 -mt-20 mb-5 shadow-2xl  "
       alt=""
-    />
-    <div class="text-9xl">Hello World.</div>
+    /> -->
+    <div class="text-9xl font-black">Hello World.</div>
     <div class="flex gap-5 mt-3">
       <div class="text-3xl">web dev</div>
       <div class=""><img src={star} alt="" /></div>
@@ -76,50 +91,29 @@
     </div>
   </section>
 
-  <section class="h-screen  ">
-    <div class="flex flex-col justify-center items-center">
-      <div class="py-14 px-4 text-5xl">whoami</div>
-      <div class="flex flex-col gap-10 max-w-screen-lg">
-        <div class="flex gap-4 items-center">
-          <img src={star} class="w-20" alt="" srcset="" />
-          <div class="text-3xl ">
-            <span class="opacity-60"> With a </span>
-            <span class="opacity-100  font-semibold">love for technology,</span>
-
-            <span class="opacity-60"
-              >I am constantly learning and discovering new advancements to fuel
-              my passion
-            </span>
-          </div>
-        </div>
-        <div class="flex gap-4 items-center">
-          <img src={star} class="w-16" alt="" srcset="" />
-          <div class="text-3xl">
-            <span class="opacity-60">Mastered the art of</span>
-            <span class="opacity-100 font-black ">web development </span>
-            <span class="opacity-60">and have a particular affinity for </span>
-            <span class="text-orange-500 opacity-100">Svelte JS</span>
-          </div>
-        </div>
-        <div class="flex gap-4 items-center">
-          <img src={star} class="w-20" alt="" srcset="" />
-          <div class="text-3xl">
-            <span class="opacity-100 font-bold">Fascinated by AI/ML,</span>
-            <span class="opacity-60"
-              >constantly seeking new ways to apply these technologies to solve
-              intricate problems</span
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+  <section data-aos="fade-up" data-aos-duration="1000" class="h-screen mx-32">
+    <Whoami />
   </section>
 
-  <section class="h-screen">
-    <div class="py-16 px-4 text-5xl">Achievements</div>
+  <section data-aos="fade-up" data-aos-duration="1000" class="h-screen mx-32">
     <Achievements />
   </section>
 
+  <section
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    class="h-full min-h-screen mx-32   "
+  >
+    <Projects />
+  </section>
+  <section
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    class="min-h-screen mx-32"
+  >
+    <Skills />
+  </section>
+  <section class="h-screen" />
   <nav class="fixed bottom-0 right-0 px-32 py-10">
     <img src={menu} class="w-10" alt="" />
   </nav>
