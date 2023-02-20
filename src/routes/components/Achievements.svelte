@@ -1,8 +1,6 @@
 <script>
   import WebdevWorkshop from "./achievementdeets/WebdevWorkshop.svelte";
-
   import QuantumX from "./achievementdeets/QuantumX.svelte";
-
   import Visionet from "./achievementdeets/Visionet.svelte";
   import { onMount } from "svelte";
   import TypeIt from "typeit";

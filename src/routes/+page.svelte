@@ -2,7 +2,7 @@
   import Skills from "./Skills.svelte";
   import Scrollbar from "smooth-scrollbar";
   import Projects from "./Projects.svelte";
-  import Whoami from "./components/achievementdeets/Whoami.svelte";
+  import Whoami from "./components/Whoami.svelte";
   import { onMount } from "svelte";
   import AOS from "aos";
   import logo from "../assets/logo.svg";
@@ -62,27 +62,13 @@
   on:mousemove={handleMousemove}
   class="bg-black text-white h-full min-h-screen overflow-hidden"
 >
-  <nav class="flex w-full fixed justify-between px-32 py-10">
-    <div>
-      <img src={logo} class="w-10" alt="" />
-    </div>
-    <div class="flex flex-col items-end text-3xl">
-      <div>Portfolio of Yajat</div>
-      <div>Vishwakarma</div>
-    </div>
-  </nav>
   <!-- Introduction page -->
   <section
     data-aos="fade-up"
     data-aos-duration="1000"
     class="flex flex-col justify-center items-center h-screen"
   >
-    <!-- <img
-      src={me}
-      bind:this={profileimage}
-      class="w-1/6 -mt-20 mb-5 shadow-2xl  "
-      alt=""
-    /> -->
+    <div class="text-2xl  ">यजत विनोद विश्वकर्मा</div>
     <div class="text-9xl font-black">Hello World.</div>
     <div class="flex gap-5 mt-3">
       <div class="text-3xl">web dev</div>
@@ -91,11 +77,19 @@
     </div>
   </section>
 
-  <section data-aos="fade-up" data-aos-duration="1000" class="h-screen mx-32">
+  <section
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    class="h-full min-h-screen mx-32"
+  >
     <Whoami />
   </section>
 
-  <section data-aos="fade-up" data-aos-duration="1000" class="h-screen mx-32">
+  <section
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    class="h-full min-h-screen mx-32"
+  >
     <Achievements />
   </section>
 

@@ -4,7 +4,6 @@
   function handleMove(e, cursor) {
     let x = e.pageX;
     var y = e.pageY;
-
     cursor.style.top = `${y - 50}px`;
     cursor.style.left = `${x - 50}px`;
   }
